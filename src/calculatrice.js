@@ -7,8 +7,8 @@ function soustraction(c,d){
 }
 
 
-function multiplication(a, e){ 
-    return a 
+function multiplication(a, e){
+    return a * e;
 }
 
 function division(p, q){

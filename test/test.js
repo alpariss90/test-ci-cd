@@ -7,7 +7,7 @@ describe("Gestion d'addition et de soustraction", function(){
     })
 
     test("test addtion de 1000 et 3500 doit etre 4500", function(){
-        expect(addition(1000, 3500)).toBe(45
+        expect(addition(1000, 3500)).toBe(4500);
     })
 
 
