@@ -1,0 +1,27 @@
+# Le nom de votre workflow (apparaît sur GitHub)
+name: Tests Automatiques
+# DÉCLENCHEURS : Quand ce workflow doit-il s'exécuter ?
+on:
+  push:                    # À chaque git push
+    branches: [ main ]     # Seulement sur la branche main
+  pull_request:            # Quand on crée une Pull Request
+    branches: [ main ]
+# LES JOBS : Ce qui va s'exécuter
+jobs:
+  tests:                   # Nom du job (vous choisissez)
+    runs-on: ubuntu-latest # Sur quelle machine virtuelle ?
+    steps:                 # Les étapes dans l'ordre
+      # Étape 1 : Récupérer le code
+      - name: Récupérer le code
+        uses: actions/checkout@v3
+      # Étape 2 : Installer Node.js
+      - name: Installer Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      # Étape 3 : Installer les dépendances
+      - name: Installer les dépendances
+        run: npm install
+      # Étape 4 : Lancer les tests
+      - name: Lancer les tests
+        run: npm test
